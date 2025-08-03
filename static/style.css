@@ -1,0 +1,111 @@
+body {
+  background: #f2f2f2;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.ip-info {
+  text-align: center;
+  color: #333;
+}
+
+.upload-form {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+input[type="file"] {
+  margin-right: 10px;
+}
+
+button {
+  background-color: #28a745;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+.file-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+.file-card {
+  background: #e9ecef;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.file-icon {
+  font-size: 36px;
+}
+
+.download-btn {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+/* Hide QR code image on small screens (phones) */
+@media only screen and (max-width: 768px) {
+  .qr-section {
+    display: none;
+  }
+}
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .file-grid {
+    grid-template-columns: 1fr; /* full width for each file card */
+  }
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+.container {
+    width: 90%;
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    margin-top: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+input, button {
+    padding: 10px;
+    margin-top: 10px;
+    width: 100%;
+}

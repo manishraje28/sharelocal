@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>📂 Local File Share</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<script>
+  if (window.innerWidth <= 600) {
+    const qrSection = document.querySelector('.qr-section');
+    if (qrSection) qrSection.style.display = 'none';
+  }
+</script>
+
+<body>
+    <div class="container">
+        <h1>📁 Local File Share</h1>
+        <p class="ip-info">Access on phone: <strong>{{ ip }}:6789</strong></p>
+
+        <div class="qr-section">
+            <p>📱 Scan this QR code to open on mobile:</p>
+            <img src="/static/ip_qr.png" alt="QR Code"
+                style="width:200px;height:200px; border:1px solid #ccc; padding:5px; margin-bottom:20px;">
+        </div>
+
+
+        <form method="POST" enctype="multipart/form-data" class="upload-form">
+            <input type="file" name="file" required>
+            <button type="submit">⬆️ Upload</button>
+        </form>
+
+        <h2>📂 Shared Files:</h2>
+        <div class="file-grid">
+            {% for file in files %}
+            <div class="file-card">
+                <div class="file-icon">📄</div>
+                <div class="file-name">{{ file }}</div>
+                <a href="/download/{{ file }}" class="download-btn">⬇️ Download</a>
+            </div>
+            {% else %}
+            <p>No files found in shared folder.</p>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+
+</html>
